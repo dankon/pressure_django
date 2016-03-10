@@ -1,22 +1,34 @@
+﻿<!DOCTYPE html>
 <html>
     <head>
-        <title>Pressure list</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="App for archive my wifes blood pressure">
+		<meta name="keywords" content="Ciśnienie,Blood pressure">
+		<meta name="author" content="Daniel Konwisorz">	
+        <title>Ciśnienia</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Pressure list</a></h1>
+            <h1>Zestawienie ciśnień</h1>
         </div>
+		<table style="width:100%" border="1" >
+			<tr>
+				<th>Data dodania</th>
+				<th>Skurczowe</th> 
+				<th>Rozkurczowe</th>				
+				<th>Puls</th>
+				<th>Kommentarz</th>				
+			</tr>		
+		{% for bl_press in all_bl_press %}
+			<tr>
+				<td>{{bl_press.add_date_time}}</td>
+				<td>{{bl_press.systolic_value}}</td>
+				<td>{{bl_press.diastolic_value}}</td>
+				<td>{{bl_press.pulse}}</td>
+				<td>{{bl_press.comment}}</td>
+			 </tr>		
+		{% endfor %}
+		</table>		
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first pressure</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second pressure</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
+	</body>
 </html>
