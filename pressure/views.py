@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def pressure_list(request):
+    return render(request, 'pressure/pressure_list.html', {})
