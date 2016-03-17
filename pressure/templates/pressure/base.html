@@ -1,0 +1,23 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<meta name="description" content="App for archive my wifes blood pressure">
+		<meta name="keywords" content="Cisnienie,Blood pressure">
+		<meta name="author" content="Daniel Konwisorz">	
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/pressure.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <title>Cisnienia</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>Zestawienie ciśnień</h1>
+        </div>
+        {% block content %}
+        {% endblock %}
+        </div>
+	</body>
+</html>

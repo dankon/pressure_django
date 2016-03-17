@@ -1,21 +1,6 @@
-﻿{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-    <head>
-		<meta charset="UTF-8">
-		<meta name="description" content="App for archive my wifes blood pressure">
-		<meta name="keywords" content="Ciśnienie,Blood pressure">
-		<meta name="author" content="Daniel Konwisorz">	
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/pressure.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <title>Ciśnienia</title>
-    </head>
-    <body>
-        <div class="page-header">
-            <h1>Zestawienie ciśnień</h1>
-        </div>
+﻿{% extends 'pressure/base.html' %}
+
+{% block content %}
         <div class="button">
             <a href='/admin/pressure/bloodpressure/add/'>Dodaj ciśnienie</a>
 		</div>
@@ -40,5 +25,4 @@
             {% endfor %}
             </table>		
         </div>
-	</body>
-</html>
+{% endblock content %}        
