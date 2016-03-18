@@ -11,6 +11,7 @@ class BloodPressure(models.Model):
     pulse =  models.IntegerField()
     comment = models.TextField()
     add_date_time = models.DateTimeField(default=timezone.now)
+    #published_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return str(self.add_date_time)
