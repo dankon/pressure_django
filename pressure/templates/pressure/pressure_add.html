@@ -1,8 +1,11 @@
 ﻿{% extends  'pressure/base.html' %}
 
 {% block content %}
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Zapisz</button>
-    </form>
+    {% if user.is_authenticated %}
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Zapisz</button>
+            
+        </form>
+    {% endif %}
 {% endblock %}

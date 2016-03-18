@@ -8,13 +8,16 @@ def pressure_list(request):
                   {'all_bl_press' : all_blood_pressure})
                 
 def blood_pressure_new(request):
-    if request.method == "POST":
-        form = BloodAddingForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            return redirect('pressure_list')
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            form = BloodAddingForm(request.POST)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.save()
+                return redirect('pressure_list')
+        else:
+            form = BloodAddingForm()
+            return render(request, 'pressure/pressure_add.html', {'form' : form})
     else:
-        form = BloodAddingForm()
-        return render(request, 'pressure/pressure_add.html', {'form' : form})
+        return redirect('pressure_list')
